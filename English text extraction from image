@@ -1,0 +1,8 @@
+import cv2
+import pytesseract        # this is the main thing that extract text from image
+from PIL import Image
+pytesseract.pytesseract.tesseract_cmd ='C:\\Program Files\\Tesseract-OCR\\tesseract.exe'  # after installing pytesseract we need to call it so that we can use in our code
+img = cv2.imread('scanned.png',cv2.COLOR_BGR2GRAY)  # converting our image in grayscale so that it can be read better
+print(pytesseract.image_to_string(img))   # here pytesseract will extract the text and print it
+cv2.imshow('Result',img)  # your original image nothing special
+cv2.waitKey(0)
